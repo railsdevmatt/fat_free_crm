@@ -19,6 +19,8 @@ gem 'acts_as_list',        '~> 0.1.4'
 gem 'simple_form',         '~> 1.5.2'
 gem 'ffaker',              '>= 1.12.0' # For loading demo data
 gem 'uglifier'
+gem 'ransack'
+gem 'jquery-rails'
 
 group :heroku do
   gem 'unicorn', :platform => :ruby
@@ -66,6 +68,7 @@ group :test do
   gem 'factory_girl_rails', '~> 1.4.0'
   gem 'simplecov', :platform => :mri_19 unless ENV["CI"]  # Until Travis supports build artifacts
   gem 'fuubar'
+  gem 'database_cleaner'
 end
 
 
