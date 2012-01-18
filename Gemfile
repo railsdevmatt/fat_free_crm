@@ -19,7 +19,7 @@ gem 'acts_as_list',        '~> 0.1.4'
 gem 'simple_form',         '~> 1.5.2'
 gem 'ffaker',              '>= 1.12.0' # For loading demo data
 gem 'uglifier'
-gem 'ransack', :git => "git://github.com/ndbroadbent/ransack.git", :branch => "order_by_only"
+gem 'ransack', :git => "git://github.com/ndbroadbent/ransack.git"
 gem 'jquery-rails'
 
 group :heroku do
