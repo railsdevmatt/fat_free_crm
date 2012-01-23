@@ -35,7 +35,7 @@ end
 
 group :development, :test do
   unless ENV["CI"]
-    gem 'ruby-debug',   :platform => :mri_18
+    # gem 'ruby-debug',   :platform => :mri_18
     gem 'ruby-debug19', :platform => :mri_19, :require => 'ruby-debug' if RUBY_VERSION == "1.9.2"
     gem 'awesome_print'
   end

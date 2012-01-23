@@ -25,15 +25,18 @@ role :web, "50.19.84.170"
 role :db,  "50.19.84.170", :primary => true
 
 after "deploy:setup", :fix_perms
-after "deploy:update_code", :fix_perms
+after "deploy:update_code", :restart
 
-ssh_options[:keys] = ["#{ENV['HOME']}/Downloads/important.pem"]
+ssh_options[:keys] = ["#{ENV['HOME']}/Desktop/important.pem"]
 
 task :fix_perms do
-  sudo "chown apache:webshare -R /var/www/projects"
-  sudo "chmod 666 -R /var/www/projects/shared/log/*"
+  # sudo "chown apache:webshare -R /var/www/projects"
+  # sudo "chmod 666 -R /var/www/projects/shared/log"
 end
 
+task :restart, :roles => :app, :except => { :no_release => true } do
+   run "touch #{current_path}/tmp/restart.txt"
+end
 
 #  rm charities 
 #  rm merchants
